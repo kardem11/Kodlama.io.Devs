@@ -16,11 +16,10 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
+	</ItemGroup>	
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Devs.Application\Devs.Application.csproj" />
-	  <ProjectReference Include="..\Devs.Domain\Devs.Domain.csproj" />
 	</ItemGroup>
 
 </Project>

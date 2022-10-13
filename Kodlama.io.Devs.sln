@@ -21,11 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "..\..\s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "..\..\source\Repos\nArchitecture\src\corePackages\Core.Security\Core.Security.csproj", "{2DFDA0F7-2FB4-4CA2-8CD0-9CFD02EE060F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs.Domain", "src\kodlama.io.Devs\Devs.Domain\Devs.Domain.csproj", "{9EAA017F-14B9-4D8E-9AAC-E69CAB272B2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devs.Domain", "src\kodlama.io.Devs\Devs.Domain\Devs.Domain.csproj", "{9EAA017F-14B9-4D8E-9AAC-E69CAB272B2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs.Persistence", "src\kodlama.io.Devs\Devs.Persistence\Devs.Persistence.csproj", "{8AA43113-3B71-4B67-8EF5-96024C0E2E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devs.Persistence", "src\kodlama.io.Devs\Devs.Persistence\Devs.Persistence.csproj", "{8AA43113-3B71-4B67-8EF5-96024C0E2E61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs.Application", "src\kodlama.io.Devs\Devs.Application\Devs.Application.csproj", "{256A5FFC-E894-4FAB-8DC4-707DFE859EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devs.Application", "src\kodlama.io.Devs\Devs.Application\Devs.Application.csproj", "{256A5FFC-E894-4FAB-8DC4-707DFE859EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs.Insfrastructure", "src\kodlama.io.Devs\Devs.Insfrastructure\Devs.Insfrastructure.csproj", "{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devs.WepAPI", "src\kodlama.io.Devs\Devs.WepAPI\Devs.WepAPI.csproj", "{25498110-930B-4994-BE2E-2E35D3ED5DC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{256A5FFC-E894-4FAB-8DC4-707DFE859EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{256A5FFC-E894-4FAB-8DC4-707DFE859EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{256A5FFC-E894-4FAB-8DC4-707DFE859EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25498110-930B-4994-BE2E-2E35D3ED5DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25498110-930B-4994-BE2E-2E35D3ED5DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25498110-930B-4994-BE2E-2E35D3ED5DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25498110-930B-4994-BE2E-2E35D3ED5DC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +97,8 @@ Global
 		{9EAA017F-14B9-4D8E-9AAC-E69CAB272B2A} = {BCD72EEB-AE70-444B-B7F3-6BC3056BF6C5}
 		{8AA43113-3B71-4B67-8EF5-96024C0E2E61} = {BCD72EEB-AE70-444B-B7F3-6BC3056BF6C5}
 		{256A5FFC-E894-4FAB-8DC4-707DFE859EB8} = {BCD72EEB-AE70-444B-B7F3-6BC3056BF6C5}
+		{1D8DB905-71CC-47BC-AD19-FB884AE0BF8F} = {BCD72EEB-AE70-444B-B7F3-6BC3056BF6C5}
+		{25498110-930B-4994-BE2E-2E35D3ED5DC1} = {BCD72EEB-AE70-444B-B7F3-6BC3056BF6C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C89BE11-F56C-42CB-B8D4-C57FC322358B}
