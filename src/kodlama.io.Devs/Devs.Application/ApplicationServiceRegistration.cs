@@ -1,4 +1,5 @@
 ﻿using Devs.Application.Features.ProgrammingLanguages.Rules;
+using Devs.Application.Features.Technologies.Rules;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,8 +20,7 @@ namespace Devs.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<TechnologyBusinessRules>();
 
             return services;
         }

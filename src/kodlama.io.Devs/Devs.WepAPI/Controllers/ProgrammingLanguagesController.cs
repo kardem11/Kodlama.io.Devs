@@ -15,41 +15,41 @@ namespace Devs.WepAPI.Controllers
     [ApiController]
     public class ProgrammingLanguagesController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        private readonly IMediator Mediator;
         public ProgrammingLanguagesController(IMediator mediator)
         {
-            _mediator = mediator;
+            Mediator = mediator;
         }
         [HttpGet]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
             GetListProgrammingLanguageQuery getListProgrammingLanguageQuery = new() { PageRequest = pageRequest};
-            ProgrammingLanguageListModel result = await _mediator.Send(getListProgrammingLanguageQuery);
+            ProgrammingLanguageListModel result = await Mediator.Send(getListProgrammingLanguageQuery);
 
             return Ok( result );
         }
         [HttpGet("Id")]
         public async Task<IActionResult> GetById([FromRoute]GetByIdProgrammingLanguageQuery getByIdProgrammingLanguageQuery)
         {
-            ProgrammingLanguageGetByIdDto result = await _mediator.Send(getByIdProgrammingLanguageQuery);
+            ProgrammingLanguageGetByIdDto result = await Mediator.Send(getByIdProgrammingLanguageQuery);
             return Ok(result);
         }
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CreateProgrammingLanguageCommand createProgrammingLanguageCommand)
         {
-            DeletedProgrammingLanguageDto result = await _mediator.Send(createProgrammingLanguageCommand);
+           CreatedProgrammingLanguageDto result = await Mediator.Send(createProgrammingLanguageCommand);
             return Ok(result);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateProgrammingLanguageCommand updateProgrammingLanguageCommand)
         {
-            UpdatedProgrammingLanguageDto result = await _mediator.Send(updateProgrammingLanguageCommand);
+            UpdatedProgrammingLanguageDto result = await Mediator.Send(updateProgrammingLanguageCommand);
             return Ok(result);
         }
         [HttpDelete]
         public async Task<IActionResult> Delete([FromBody] DeleteProgrammingLanguageCommand deleteProgrammingLanguageCommand)
         {
-            DeletedProgrammingLanguageDto result = await _mediator.Send(deleteProgrammingLanguageCommand);
+            DeletedProgrammingLanguageDto result = await Mediator.Send(deleteProgrammingLanguageCommand);
             return Ok(result);
         }
     }

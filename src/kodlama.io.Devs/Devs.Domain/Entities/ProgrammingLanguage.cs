@@ -15,7 +15,7 @@ namespace Devs.Domain.Entities
         {
         }
 
-        public ProgrammingLanguage(int id,string name)
+        public ProgrammingLanguage(int id,string name) : this()
         {
             Id = id;
             Name = name;

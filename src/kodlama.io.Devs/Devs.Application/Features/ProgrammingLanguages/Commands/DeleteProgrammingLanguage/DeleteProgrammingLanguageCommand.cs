@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Devs.Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLanguage;
 using Devs.Application.Features.ProgrammingLanguages.Dtos;
 using Devs.Application.Features.ProgrammingLanguages.Rules;
 using Devs.Application.Services.Repositories;
@@ -13,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace Devs.Application.Features.ProgrammingLanguages.Commands.DeleteProgrammingLanguage
 {
-    public class DeleteProgrammingLanguageCommand : IRequest<DeletedProgrammingLanguageDto>
+    public class DeleteProgrammingLanguageCommand :IRequest<DeletedProgrammingLanguageDto>
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
         public class DeleteProgrammingLanguageCommandHandler : IRequestHandler<DeleteProgrammingLanguageCommand, DeletedProgrammingLanguageDto>
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
@@ -31,10 +30,9 @@ namespace Devs.Application.Features.ProgrammingLanguages.Commands.DeleteProgramm
 
             public async Task<DeletedProgrammingLanguageDto> Handle(DeleteProgrammingLanguageCommand request, CancellationToken cancellationToken)
             {
-               ProgrammingLanguage mappedProgrammingLanguage = _mapper.Map<ProgrammingLanguage>(request.Name);
-               ProgrammingLanguage deletedProgrammingLanguage = await _programmingLanguageRepository.DeleteAsync(mappedProgrammingLanguage);
-                DeletedProgrammingLanguageDto deletedProgrammingLanguageDto = _mapper.Map<DeletedProgrammingLanguageDto>(deletedProgrammingLanguage.Name);
-
+                ProgrammingLanguage programmingLanguage = await _programmingLanguageRepository.GetAsync(l => l.Id == request.Id);
+                ProgrammingLanguage deletedProgrammingLanguage = await _programmingLanguageRepository.DeleteAsync(programmingLanguage);
+                DeletedProgrammingLanguageDto deletedProgrammingLanguageDto = _mapper.Map<DeletedProgrammingLanguageDto>(deletedProgrammingLanguage);
                 return deletedProgrammingLanguageDto;
             }
         }

@@ -19,8 +19,8 @@ namespace Devs.Application.Features.ProgrammingLanguages.Rules
         }
         public async Task ProgrammingLanguageCanNotBeDuplicatedWhenInserted(string name)
         {
-            IPaginate<ProgrammingLanguage> result = await _programmingLanguageRepository.GetListAsync(p=> p.Name.ToLower()== name.ToLower());
-            if (result.Items.Any()) throw new BusinessException("Programming language exists.");
+            IPaginate<ProgrammingLanguage> result = await _programmingLanguageRepository.GetListAsync(p=> p.Name == name);
+            if (result.Items.Any()) throw new BusinessException(name + " " + "already exist.");
         }
         public async Task ProgrammingLanguageCanNotBeNull(string name)
         {
@@ -29,6 +29,6 @@ namespace Devs.Application.Features.ProgrammingLanguages.Rules
                 throw new BusinessException("Programming Language Can Not Be Null ");
             }
         }
- 
+
     }
 }
