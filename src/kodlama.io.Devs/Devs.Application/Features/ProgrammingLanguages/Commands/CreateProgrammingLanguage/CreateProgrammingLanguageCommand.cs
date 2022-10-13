@@ -30,15 +30,6 @@ namespace Devs.Application.Features.ProgrammingLanguages.Commands.CreateProgramm
                 _programmingLanguageBusinessRules = programmingLanguageBusinessRules;
             }
 
-            public async Task<DeletedProgrammingLanguageDto> Handle(CreateProgrammingLanguageCommand request, CancellationToken cancellationToken)
-            {
-
-                await _programmingLanguageBusinessRules.ProgrammingLanguageCanNotBeDuplicatedWhenInserted(request.Name);
-                ProgrammingLanguage programmingLanguage = _mapper.Map<ProgrammingLanguage>(request.Name);
-                ProgrammingLanguage createdProgrammingLanguage = await _programmingLanguageRepository.AddAsync(programmingLanguage);
-                DeletedProgrammingLanguageDto createdProgrammingLanguageDto = _mapper.Map<DeletedProgrammingLanguageDto>(createdProgrammingLanguage);
-                return createdProgrammingLanguageDto;
-            }
         }
     }
 }
