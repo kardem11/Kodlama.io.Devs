@@ -17,11 +17,11 @@ namespace Devs.Domain.Entities
         {
         }
 
-        public Technology(int programmingLanguageId, string name, int id)
+        public Technology(int id, int programmingLanguageId,  string name)
         {
+            Id = id;
             ProgrammingLanguageId = programmingLanguageId;
             Name = name;
-            Id = id;
         }
     }
 }

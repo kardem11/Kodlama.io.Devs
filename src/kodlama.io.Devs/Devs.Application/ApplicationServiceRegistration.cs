@@ -1,4 +1,5 @@
-﻿using Devs.Application.Features.ProgrammingLanguages.Rules;
+﻿using Devs.Application.Features.GithubProfiles.Rules;
+using Devs.Application.Features.ProgrammingLanguages.Rules;
 using Devs.Application.Features.Technologies.Rules;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +22,7 @@ namespace Devs.Application
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<TechnologyBusinessRules>();
+            services.AddScoped<GithubBusinessRules>();
 
             return services;
         }
