@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Devs.Application.Features.ProgrammingLanguages.Queries
 {
-    public class GetByIdProgrammingLanguageQuery :IRequest<ProgrammingLanguageGetByIdDto>
+    public class GetByIdProgrammingLanguageQuery : IRequest<ProgrammingLanguageGetByIdDto>
     {
         public int Id { get; set; }
         public class GetByIdProgrammingLanguageQueryHandler : IRequestHandler<GetByIdProgrammingLanguageQuery, ProgrammingLanguageGetByIdDto>
@@ -30,8 +30,13 @@ namespace Devs.Application.Features.ProgrammingLanguages.Queries
 
             public async Task<ProgrammingLanguageGetByIdDto> Handle(GetByIdProgrammingLanguageQuery request, CancellationToken cancellationToken)
             {
-                ProgrammingLanguageGetByIdDto programmingLanguageGetByIdDto = _mapper.Map<ProgrammingLanguageGetByIdDto>(request);
-                return programmingLanguageGetByIdDto;
+              ProgrammingLanguage programmingLanguage = await _programmingLanguageRepository.GetAsync(p => p.Id == request.Id);
+                _programmingLanguageBusinessRules.ProgrammingLanguageShouldExistWhenRequested(programmingLanguage);
+               
+                ProgrammingLanguageGetByIdDto result = _mapper.Map<ProgrammingLanguageGetByIdDto>(programmingLanguage);
+
+                return result;
+                
             }
         }
     }

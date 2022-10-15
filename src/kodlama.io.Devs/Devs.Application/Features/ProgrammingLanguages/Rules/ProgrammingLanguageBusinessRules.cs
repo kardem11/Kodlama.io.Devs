@@ -29,6 +29,11 @@ namespace Devs.Application.Features.ProgrammingLanguages.Rules
                 throw new BusinessException("Programming Language Can Not Be Null ");
             }
         }
+        public async Task ProgrammingLanguageShouldExistWhenRequested(ProgrammingLanguage programmingLanguage)
+        {
+            
+            if(programmingLanguage == null) throw new BusinessException("Requested ProgrammingLanguage Does Not Exist");
+        }
 
     }
 }
